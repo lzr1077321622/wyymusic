@@ -20,7 +20,7 @@ import Video from '@/components/home/Video' //全部视频
 import PayBoutique from '@/components/home/PayBoutique' // 付费精选
 import TypeRadio from '@/components/home/TypeRadio' //分类电台列表
 import Nearsong from '@/components/user/nearsong' //最近播放
-
+import PlayVideo from '@/components/home/PlayVideo' //mv播放
 
 
 Vue.use(Router)
@@ -223,9 +223,17 @@ const router = new Router({
 				requireAuth: true,
 			}
 		},
+		{ // mv播放
+			path: '/PlayVideo',
+			name: 'PlayVideo',
+			component:PlayVideo,
+			meta: {
+				title: 'mv播放',
+				index:20,
+				requireAuth: true,
+			}
+		},
 
-
-		
       ///////////////////////////////////////////////////////////////////
 	
 		{

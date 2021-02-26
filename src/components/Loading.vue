@@ -40,7 +40,7 @@ Vue.use(Loading);
 .loading{
     width: 100%;
     height: 100%;
-    z-index: 9999999999999999999999999999999999999 !important;
+    z-index: 99999999999999999 !important;
 }
 .main{
    width: 100%;
@@ -50,10 +50,10 @@ Vue.use(Loading);
     left: 0px;
 }
 .centerbox{
-     width: 100%;
+    width: 100%;
     height: 100%;
     position: relative;
-     background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.4);
 }
 .mianbox{
     width: 65px;
@@ -64,7 +64,7 @@ Vue.use(Loading);
     right: 0px;
     bottom: 0px;
     margin: auto;
-   color:#fff ;
+    color:#fff ;
 }
 .van-loading--vertical .van-loading__text{
     color:#fff ;

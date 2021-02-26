@@ -30,7 +30,9 @@ const config = {
 		getUserinfo :address +"user/detail?uid=",//说明 : 登陆后调用此接口 , 传入用户 id, 可以获取用户详情
 	    getusernearSong:address +"user/record?type=0&uid=",//最近播放
         getblc: address +"lyric?id=",//获取歌词     
-	
+	    getmvDetail:address+"mv/url?id=",//获取 mv地址
+        getMvpl:address+"comment/mv?id=",//获取 mv 评论
+		getMvnums:address+"mv/detail/info?mvid=",//mv的评论点赞数量 
 	}
 };
 export default config;

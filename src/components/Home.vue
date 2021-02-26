@@ -5,11 +5,11 @@
         <van-search
           v-model="musicName"
           show-action
-          background=""
+          background="#ff000017"
           placeholder="请输入歌曲,歌手名称"
         >
           <template #action>
-            <div @click="onSearch">搜索</div>
+            <div style="color:red" @click="onSearch">搜索</div>
           </template>
         </van-search>
       </div>

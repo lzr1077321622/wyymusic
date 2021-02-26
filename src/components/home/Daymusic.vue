@@ -14,17 +14,17 @@
        <!---->
        <div class="list">
            <ul>
-            <li v-for='(item,index) in listdata' :key='index' @click="playMusic(item.id,item.name,item.album.picUrl)">
-                <div class="musicbg">
+            <li v-for='(item,index) in listdata' :key='index'>
+                <div class="musicbg"  @click="playMusic(item.id,item.name,item.album.picUrl)">
                    <img :src="item.album.picUrl" alt="">
                 </div>
-                <div class="title">
-                    <div class="item1">
+                <div class="title" >
+                    <div class="item1"  @click="playMusic(item.id,item.name,item.album.picUrl)">
                         <p>{{item.name}}</p>
                         <p>{{item.album.artists[0].name}}-{{item.album.name}}</p>
                     </div>
-                    <div class="item2">
-                       <van-icon name="service" size='28' class="imgs" color='#999'/>
+                    <div class="item2" v-if="item.mvid !=0"  @click="playVideo(item.mvid)">
+                       <van-icon name="play-circle-o" size='28' class="imgs" color='#999'/>
                     </div>
                 </div>
             </li>
@@ -102,12 +102,21 @@ Vue.use(Icon);
                    
                 });		
             },
+            playVideo(mvid){
+                this.$router.push({
+                name:'PlayVideo',
+                    query: {
+                    mvid:mvid,
+                }
+              })
+            },
             goback(){
                 window.history.back(-1);
             }
          
 		},
 		created: function() { 
+    
           this.gettaydaymusic();
           var time = new Date();
           var mytime=time.toLocaleDateString(); //获取当前时间
@@ -181,7 +190,7 @@ Vue.use(Icon);
       .musicbg img{
         width: 40px;
         height: 39px;
-     
+        border-radius: 5px;
         margin-top: 5px;
         margin-left: 5px;
       }
@@ -217,8 +226,10 @@ Vue.use(Icon);
           height: 48px;
       }
       .imgs{
-        font-size: 28px;
-        margin-left: 20px;
-        margin-top: 5px;
+            width: 40px;
+            height: 39px;
+            margin-top: 5px;
+            margin-left: 5px;
+          
       }
 </style>
